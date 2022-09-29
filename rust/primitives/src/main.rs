@@ -30,13 +30,13 @@ fn main() {
 		4
 	};
 
-	context_result = 222;
+	context_result = 2;
 
 	println!("{}", context_result);
-
+	println!("pauls branch");
 	match context_result {
 		1 =>  println!("one"),
-		7 | 4 | 3 | 2 => println!("good number"),
+		a @ (7 | 4 | 3 | 2) => println!("{} is a good number", a),
 		s => {
 			println!("nonstandard number");
 			if (s % 2 == 0) {
@@ -44,5 +44,5 @@ fn main() {
 			}
 		}
 	}
-
+// hdaffeaffsv
 }
