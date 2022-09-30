@@ -20,6 +20,8 @@ fn main() {
 		mutable
 	};
 
+	println!("mutable is {}, mutable");
+
 	println!("{}",context_result);
 
 	let mut context_result: i32 = if context_result {
@@ -36,7 +38,7 @@ fn main() {
 
 	match context_result {
 		1 =>  println!("one"),
-		7 | 4 | 3 | 2 => println!("good number"),
+		a @ (7 | 4 | 3 | 2) => println!("{} is a good number", a),
 		s => {
 			println!("nonstandard number");
 			if (s % 2 == 0) {
@@ -44,5 +46,5 @@ fn main() {
 			}
 		}
 	}
-
+	//test
 }
