@@ -37,7 +37,7 @@ fn main() {
 
 	println!("{}", context_result);
 
-	match context_result {
+	match context_result { // logic on match_result
 		1 =>  println!("one"),
 		a @ (7 | 4 | 3 | 2) => println!("{} is good number",  a),
 		s => {
@@ -47,5 +47,5 @@ fn main() {
 			}
 		}
 	}
-	//test
-}
+
+} // comment
