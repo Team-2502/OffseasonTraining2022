@@ -1,3 +1,3 @@
 fn main() {
-    println!("calculator")
+    calculator::run().expect("crashed");
 }
