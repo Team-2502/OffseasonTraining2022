@@ -3,6 +3,7 @@ use std::io;
 mod components;
 
 use crate::components::add;
+use crate::components::fib;
 
 pub fn run() -> Result<(), Box<dyn Error>> {
 
@@ -12,6 +13,9 @@ pub fn run() -> Result<(), Box<dyn Error>> {
     match selectedMode {
         ADD => {
             println!("{}",add::add(1,2));
+        },
+        FIB => {
+            println!("{}",fib::fib(1));
         },
         _ => {
             println!("Unimplemented");
