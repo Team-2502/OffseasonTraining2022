@@ -1,3 +1,5 @@
+mod tests;
+
 use std::error::Error;
 use std::io;
 mod components;
