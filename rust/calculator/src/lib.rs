@@ -11,10 +11,10 @@ pub fn run() -> Result<(), Box<dyn Error>> {
     println!("{:?}",selectedMode);
 
     match selectedMode {
-        ADD => {
+        mode::ADD => {
             println!("{}",add::add(1,2));
         },
-        FIB => {
+        mode::FIB => {
             println!("{}",fib::fib(1));
         },
         _ => {
