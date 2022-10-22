@@ -6,6 +6,7 @@ mod components;
 
 use crate::components::add;
 use crate::components::fib;
+use crate::components::subtract;
 use crate::components::sqrt;
 
 pub fn run() -> Result<(), Box<dyn Error>> {
@@ -19,7 +20,10 @@ pub fn run() -> Result<(), Box<dyn Error>> {
         },
         mode::FIB => {
             println!("{}",fib::fib(1));
-        }
+        },
+        mode::SUB => {
+            println!("{}",subtract::subtract(3,-2));
+        },
         mode::SQRT => {
             println!("Which number");
             let mut a: f64 = 1.0;
