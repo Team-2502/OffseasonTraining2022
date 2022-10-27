@@ -1,4 +1,3 @@
-
 use crate::Component;
 pub struct sqrt;
 impl Component for sqrt {
