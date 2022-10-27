@@ -21,13 +21,9 @@ pub fn run() -> Result<(), Box<dyn Error>> {
             println!("{}",fib::fib(1));
         }
         mode::SQRT => {
-            println!("Which number");
-            let mut a: f64 = 1.0;
-            let mut str = String::new();
-            io::stdin().read_line(&mut str);
-            a = str.trim().parse()?;
+            let SquareRoot: sqrt::sqrt = sqrt::sqrt::new();
 
-            println!("{}", sqrt::sqrt(a));
+            println!("{}", SquareRoot.run());
         },
         _ => {
             println!("Unimplemented");
