@@ -15,7 +15,8 @@ pub fn run() -> Result<(), Box<dyn Error>> {
 
     match selectedMode {
         mode::ADD => {
-            println!("{}",add::add(1,2));
+            let Adder: add::add = add::add::new();
+            println!("{}", Adder.run());
         },
         mode::FIB => {
             println!("{}",fib::fib(1));
@@ -62,4 +63,15 @@ fn getMode() -> Result<mode, Box<dyn Error>> {
         _ => Ok(mode::UNKNOWN),
     }
 
+}
+
+pub trait Component {
+    fn new() -> Self;
+    fn run(&self) -> f64; // main run method, returns result
+    fn input(&self) -> f64 {
+        let mut str = String::new();
+        io::stdin().read_line(&mut str);
+        let a: f64 = str.trim().parse().unwrap();
+        a
+    }
 }
