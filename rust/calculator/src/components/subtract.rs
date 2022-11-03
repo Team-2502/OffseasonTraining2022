@@ -9,6 +9,8 @@ impl Component for subtract {
         let a = self.input();
         println!("input the second number");
         let b = self.input();
-        a-b    
+        let x = a-b;
+        let x = (x * 100.0).round() / 100.0;
+        x    
     }
 }
