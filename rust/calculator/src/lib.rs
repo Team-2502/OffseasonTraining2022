@@ -23,7 +23,8 @@ pub fn run() -> Result<(), Box<dyn Error>> {
             println!("{}",fib::fib(1));
         },
         mode::SUB => {
-            println!("{}",subtract::subtract(3,-2));
+            let Subtracter: subtract::subtract = subtract::subtract::new();
+            println!("Your answer is: {}", Subtracter.run())
         },
         mode::SQRT => {
             println!("Which number");
