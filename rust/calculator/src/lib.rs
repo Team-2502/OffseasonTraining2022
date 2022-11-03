@@ -7,6 +7,7 @@ mod components;
 use crate::components::add;
 use crate::components::fib;
 use crate::components::sqrt;
+use crate::components::tan;
 
 pub fn run() -> Result<(), Box<dyn Error>> {
 
@@ -30,8 +31,12 @@ pub fn run() -> Result<(), Box<dyn Error>> {
 
             println!("{}", sqrt::sqrt(a));
         },
+        mode::TAN => {
+            let Tanner: tan::tan = tan::tan::new();
+            println!("{}", Tanner.run());
+        },
         _ => {
-            println!("Unimplemented");
+            println!("nope, doesn't exist");
         }
     }
 
@@ -45,6 +50,7 @@ enum mode {
     SUB,
     FIZZ,
     SQRT,
+    TAN,
     UNKNOWN,
 }
 
@@ -64,6 +70,7 @@ fn getMode() -> Result<mode, Box<dyn Error>> {
         2 => Ok(mode::ADD),
         3 => Ok(mode::SUB),
         5 => Ok(mode::SQRT),
+        6 => Ok(mode::TAN),
         _ => Ok(mode::UNKNOWN),
     }
 
