@@ -7,6 +7,7 @@ mod components;
 use crate::components::add;
 use crate::components::fib;
 use crate::components::sqrt;
+use crate::components::divide;
 
 pub fn run() -> Result<(), Box<dyn Error>> {
 
@@ -18,6 +19,10 @@ pub fn run() -> Result<(), Box<dyn Error>> {
             let Adder: add::add = add::add::new();
             println!("{}", Adder.run());
         },
+        mode::DIV => {
+         let div: divide::div=divide::div::new();
+         println!("the result is {}", div.run());
+        }
         mode::FIB => {
             println!("{}",fib::fib(1));
         }
@@ -45,6 +50,7 @@ enum mode {
     SUB,
     FIZZ,
     SQRT,
+    DIV,
     UNKNOWN,
 }
 
@@ -64,6 +70,7 @@ fn getMode() -> Result<mode, Box<dyn Error>> {
         2 => Ok(mode::ADD),
         3 => Ok(mode::SUB),
         5 => Ok(mode::SQRT),
+        6=> Ok(mode::DIV),
         _ => Ok(mode::UNKNOWN),
     }
 
