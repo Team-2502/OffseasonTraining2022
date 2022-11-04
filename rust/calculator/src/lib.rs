@@ -19,7 +19,8 @@ pub fn run() -> Result<(), Box<dyn Error>> {
             println!("{}", Adder.run());
         },
         mode::FIB => {
-            println!("{}",fib::fib(1));
+            let Fibber: fib::fib = fib::fib::new();
+            println!("{}", Fibber.run());
         }
         mode::SQRT => {
             println!("Which number");
@@ -49,7 +50,7 @@ enum mode {
 }
 
 fn getMode() -> Result<mode, Box<dyn Error>> {
-    println!("What mode do you want?");
+    println!("What mode do you want!");
 
     let mut buffer = String::new();
     io::stdin().read_line(&mut buffer)?;
