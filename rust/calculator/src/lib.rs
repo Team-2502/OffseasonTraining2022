@@ -7,6 +7,7 @@ mod components;
 use crate::components::add;
 use crate::components::fib;
 use crate::components::sqrt;
+use crate::components::fizz;
 
 pub fn run() -> Result<(), Box<dyn Error>> {
 
@@ -20,6 +21,10 @@ pub fn run() -> Result<(), Box<dyn Error>> {
         },
         mode::FIB => {
             println!("{}",fib::fib(1));
+        },
+        mode::FIZZ => {
+            let Fizz: fizz::fizz = fizz::fizz::new();
+            println!("{}", Fizz.run());
         }
         mode::SQRT => {
             let SquareRoot: sqrt::sqrt = sqrt::sqrt::new();
@@ -59,6 +64,7 @@ fn getMode() -> Result<mode, Box<dyn Error>> {
         1 => Ok(mode::FIB),
         2 => Ok(mode::ADD),
         3 => Ok(mode::SUB),
+        4 => Ok(mode::FIZZ),
         5 => Ok(mode::SQRT),
         _ => Ok(mode::UNKNOWN),
     }
